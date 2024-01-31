@@ -25,14 +25,6 @@ conn.commit()
 rss_urls = [
     'https://www.theverge.com/rss/index.xml',
     'https://techcrunch.com/feed/',
-    'http://feeds.bbci.co.uk/news/technology/rss.xml',
-    'https://www.cnet.com/rss/news/',
-    'https://www.wired.com/feed/tag/ai/latest/rss',
-    'https://www.wired.com/feed/rss',   
-    'https://www.engadget.com/rss.xml',
-    'https://www.technologyreview.com/feed/',
-    'https://gizmodo.com/rss',
-    'https://venturebeat.com/feed/'
 ]
 CHECK_INTERVAL = 60 * 10  # 10分ごとにチェック
 model_name = "gpt-3.5-turbo-0613"
@@ -51,7 +43,7 @@ while True:
             first_entry = feed.entries[0]
 
             # データベースから最後のentry IDを取得
-            cursor.execute("SELECT last_entry_id FROM last_entry_ids WHERE rss_url=?",                           (rss_url,))
+            cursor.execute("SELECT last_entry_id FROM last_entry_ids WHERE rss_url=?",(rss_url,))
             result = cursor.fetchone()
             last_entry_id = result[0] if result else None
 
