@@ -1,0 +1,5 @@
+.env
+.vscode/
+rss_feed.db
+rss_feed.log
+.DS_Store
