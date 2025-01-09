@@ -27,7 +27,7 @@ rss_urls = [
     'https://www.theverge.com/rss/index.xml',
     'https://techcrunch.com/feed/',
 ]
-CHECK_INTERVAL = 60 * 60 * 48  # 24時間ごとにチェック
+CHECK_INTERVAL = 60 * 60 * 72  # 24時間ごとにチェック
 model_name = "gpt-3.5-turbo-0613"
 slack_webhook_url = os.environ.get("SLACK_WEBHOOK_URL")
 openai_api_key = os.environ.get("OPENAI_API_KEY")

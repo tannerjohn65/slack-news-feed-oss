@@ -1,15 +1,15 @@
- name: Run AI Review
+name: Run AI Review
 
- on:
- pull_request:
-     types: [opened, synchronize]
+on:
+  pull_request:
+    types: [opened, synchronize]
 
- permissions:
- contents: write
- pull-requests: write
+permissions:
+  contents: write
+  pull-requests: write
 
- jobs:
- ai-review:
-     uses: shonakamura000/ai-code-review/.github/workflows/ai_review_reusable.yml@main
-     secrets:
-     OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+jobs:
+  ai-review:
+    uses: shonakamura000/ai-code-review/.github/workflows/ai_review_reusable.yml@main
+    secrets:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
